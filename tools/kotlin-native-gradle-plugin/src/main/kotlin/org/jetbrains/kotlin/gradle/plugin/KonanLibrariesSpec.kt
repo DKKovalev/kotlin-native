@@ -100,8 +100,9 @@ open class KonanLibrariesSpec(val task: KonanArtifactWithLibrariesTask, val proj
         klibInternal(libraryProject.konanArtifactsContainer.getByName(name), friend)
     }
 
+    fun artifact(libraryProject: Project, name: String) = artifact(libraryProject, name, false)
     /** Artifact in the current project by name */
-    fun artifact(name: String, friend: Boolean = false) = artifact(project, name, friend)
+    fun artifact(name: String, friend: Boolean) = artifact(project, name, friend)
 
     fun artifact(name: String) = artifact(project, name, false)
 
